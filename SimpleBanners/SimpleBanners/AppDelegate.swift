@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             window = UIWindow(frame: UIScreen.main.bounds)
             window?.makeKeyAndVisible()
-            window?.rootViewController = MainRootViewController()
+            window?.rootViewController = RootNavigationViewController()
         }
         return true
     }

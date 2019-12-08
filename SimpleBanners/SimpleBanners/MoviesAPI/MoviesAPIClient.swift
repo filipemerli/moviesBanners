@@ -23,9 +23,7 @@ class MoviesAPIClient {
     
     func fetchMovies(completion: @escaping (Result<[Movie], NetworkResponseError>) -> Void) {
         let urlRequest = URLRequest(url: endPoint.appendingPathComponent(path))
-        print("URLRequest = \(urlRequest)")
         session.dataTask(with: urlRequest, completionHandler: { data, response, error in
-        print("Data = \(String(describing: data))")
         guard let httpResponse = response as? HTTPURLResponse,
         httpResponse.hasSuccessStatusCode,
         let dados = data
