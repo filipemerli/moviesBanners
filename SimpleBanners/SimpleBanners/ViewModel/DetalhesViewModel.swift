@@ -37,7 +37,7 @@ final class DetalhesViewModel {
             return
         }
         isFetching = true
-        coverBanner.loadImageWithUrl(theUrl: movie.backDrops.first ?? "http://") { result in
+        coverBanner.loadImageWithUrl(theUrl: movie.backDrops?.first ?? "http://") { result in
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {

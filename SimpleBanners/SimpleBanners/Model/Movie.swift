@@ -9,13 +9,13 @@
 import Foundation
 
 struct Movie {
-    let title: String
-    let overview: String
-    let duration: String
-    let releaseYear: String
-    let coverUrl: String
-    let backDrops: [String]
-    let id: String
+    let title: String?
+    let overview: String?
+    let duration: String?
+    let releaseYear: String?
+    let coverUrl: String?
+    let backDrops: [String]?
+    let id: String?
     
     enum CodingKeys: String, CodingKey {
         case title

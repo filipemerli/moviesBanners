@@ -61,8 +61,9 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
     func setCell(with movie: Movie?) {
         activityIndicator.startAnimating()
         if let movie = movie {
-            movieTitleLabel.text = "\(movie.title)"
-            bannerImageView.loadImageWithUrl(theUrl: movie.coverUrl) { result in
+            let title = movie.title
+            movieTitleLabel.text = title
+            bannerImageView.loadImageWithUrl(theUrl: movie.coverUrl ?? "http://") { result in
                 switch result {
                 case .failure ( _):
                     DispatchQueue.main.async {

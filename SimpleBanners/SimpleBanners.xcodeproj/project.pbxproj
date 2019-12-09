@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A731EA18239DDDDF00AC57DD /* DetalheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731EA17239DDDDF00AC57DD /* DetalheViewController.swift */; };
 		A731EA1A239DDF7800AC57DD /* DetalhesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731EA19239DDF7800AC57DD /* DetalhesViewModel.swift */; };
+		A731EA22239DF5DE00AC57DD /* SimpleBannersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731EA21239DF5DE00AC57DD /* SimpleBannersTests.swift */; };
 		A78A75EE2399E4200045AA66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A75ED2399E4200045AA66 /* AppDelegate.swift */; };
 		A78A75F02399E4200045AA66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A75EF2399E4200045AA66 /* SceneDelegate.swift */; };
 		A78A75F52399E4200045AA66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78A75F32399E4200045AA66 /* Main.storyboard */; };
@@ -28,9 +29,22 @@
 		A78A762D239DA9D70045AA66 /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A762C239DA9D70045AA66 /* RootNavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A731EA24239DF5DE00AC57DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A78A75E22399E4200045AA66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A78A75E92399E4200045AA66;
+			remoteInfo = SimpleBanners;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		A731EA17239DDDDF00AC57DD /* DetalheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheViewController.swift; sourceTree = "<group>"; };
 		A731EA19239DDF7800AC57DD /* DetalhesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesViewModel.swift; sourceTree = "<group>"; };
+		A731EA1F239DF5DE00AC57DD /* SimpleBannersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleBannersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A731EA21239DF5DE00AC57DD /* SimpleBannersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleBannersTests.swift; sourceTree = "<group>"; };
+		A731EA23239DF5DE00AC57DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A78A75EA2399E4200045AA66 /* SimpleBanners.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleBanners.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78A75ED2399E4200045AA66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A78A75EF2399E4200045AA66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +67,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A731EA1C239DF5DE00AC57DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A78A75E72399E4200045AA66 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -71,10 +92,20 @@
 			path = TelaDetalhe;
 			sourceTree = "<group>";
 		};
+		A731EA20239DF5DE00AC57DD /* SimpleBannersTests */ = {
+			isa = PBXGroup;
+			children = (
+				A731EA21239DF5DE00AC57DD /* SimpleBannersTests.swift */,
+				A731EA23239DF5DE00AC57DD /* Info.plist */,
+			);
+			path = SimpleBannersTests;
+			sourceTree = "<group>";
+		};
 		A78A75E12399E4200045AA66 = {
 			isa = PBXGroup;
 			children = (
 				A78A75EC2399E4200045AA66 /* SimpleBanners */,
+				A731EA20239DF5DE00AC57DD /* SimpleBannersTests */,
 				A78A75EB2399E4200045AA66 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				A78A75EA2399E4200045AA66 /* SimpleBanners.app */,
+				A731EA1F239DF5DE00AC57DD /* SimpleBannersTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,6 +205,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A731EA1E239DF5DE00AC57DD /* SimpleBannersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A731EA26239DF5DF00AC57DD /* Build configuration list for PBXNativeTarget "SimpleBannersTests" */;
+			buildPhases = (
+				A731EA1B239DF5DE00AC57DD /* Sources */,
+				A731EA1C239DF5DE00AC57DD /* Frameworks */,
+				A731EA1D239DF5DE00AC57DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A731EA25239DF5DE00AC57DD /* PBXTargetDependency */,
+			);
+			name = SimpleBannersTests;
+			productName = SimpleBannersTests;
+			productReference = A731EA1F239DF5DE00AC57DD /* SimpleBannersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A78A75E92399E4200045AA66 /* SimpleBanners */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A78A75FE2399E4230045AA66 /* Build configuration list for PBXNativeTarget "SimpleBanners" */;
@@ -200,6 +250,10 @@
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Filipe Merli";
 				TargetAttributes = {
+					A731EA1E239DF5DE00AC57DD = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = A78A75E92399E4200045AA66;
+					};
 					A78A75E92399E4200045AA66 = {
 						CreatedOnToolsVersion = 11.1;
 					};
@@ -219,11 +273,19 @@
 			projectRoot = "";
 			targets = (
 				A78A75E92399E4200045AA66 /* SimpleBanners */,
+				A731EA1E239DF5DE00AC57DD /* SimpleBannersTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A731EA1D239DF5DE00AC57DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A78A75E82399E4200045AA66 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -237,6 +299,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A731EA1B239DF5DE00AC57DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A731EA22239DF5DE00AC57DD /* SimpleBannersTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A78A75E62399E4200045AA66 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -262,6 +332,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A731EA25239DF5DE00AC57DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A78A75E92399E4200045AA66 /* SimpleBanners */;
+			targetProxy = A731EA24239DF5DE00AC57DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		A78A75F32399E4200045AA66 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -282,6 +360,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A731EA27239DF5DF00AC57DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M2Z8KTGT88;
+				INFOPLIST_FILE = SimpleBannersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.merli.SimpleBannersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleBanners.app/SimpleBanners";
+			};
+			name = Debug;
+		};
+		A731EA28239DF5DF00AC57DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M2Z8KTGT88;
+				INFOPLIST_FILE = SimpleBannersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.merli.SimpleBannersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleBanners.app/SimpleBanners";
+			};
+			name = Release;
+		};
 		A78A75FC2399E4230045AA66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -437,6 +555,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A731EA26239DF5DF00AC57DD /* Build configuration list for PBXNativeTarget "SimpleBannersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A731EA27239DF5DF00AC57DD /* Debug */,
+				A731EA28239DF5DF00AC57DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A78A75E52399E4200045AA66 /* Build configuration list for PBXProject "SimpleBanners" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
