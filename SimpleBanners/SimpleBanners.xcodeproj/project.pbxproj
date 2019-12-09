@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A731EA18239DDDDF00AC57DD /* DetalheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731EA17239DDDDF00AC57DD /* DetalheViewController.swift */; };
+		A731EA1A239DDF7800AC57DD /* DetalhesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731EA19239DDF7800AC57DD /* DetalhesViewModel.swift */; };
 		A78A75EE2399E4200045AA66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A75ED2399E4200045AA66 /* AppDelegate.swift */; };
 		A78A75F02399E4200045AA66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A75EF2399E4200045AA66 /* SceneDelegate.swift */; };
 		A78A75F52399E4200045AA66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78A75F32399E4200045AA66 /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A731EA17239DDDDF00AC57DD /* DetalheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheViewController.swift; sourceTree = "<group>"; };
+		A731EA19239DDF7800AC57DD /* DetalhesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesViewModel.swift; sourceTree = "<group>"; };
 		A78A75EA2399E4200045AA66 /* SimpleBanners.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleBanners.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78A75ED2399E4200045AA66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A78A75EF2399E4200045AA66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A731EA16239DDDA600AC57DD /* TelaDetalhe */ = {
+			isa = PBXGroup;
+			children = (
+				A731EA17239DDDDF00AC57DD /* DetalheViewController.swift */,
+			);
+			path = TelaDetalhe;
+			sourceTree = "<group>";
+		};
 		A78A75E12399E4200045AA66 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				A78A762C239DA9D70045AA66 /* RootNavigationViewController.swift */,
+				A731EA16239DDDA600AC57DD /* TelaDetalhe */,
 				A78A7627239D9EF50045AA66 /* FirstPage */,
 			);
 			path = View;
@@ -135,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				A78A761A239C77210045AA66 /* MoviesListViewModel.swift */,
+				A731EA19239DDF7800AC57DD /* DetalhesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -232,8 +246,10 @@
 				A78A7622239C8CAD0045AA66 /* BannerImageResponse.swift in Sources */,
 				A78A75EE2399E4200045AA66 /* AppDelegate.swift in Sources */,
 				A78A76072399E9480045AA66 /* HTTPResponse.swift in Sources */,
+				A731EA18239DDDDF00AC57DD /* DetalheViewController.swift in Sources */,
 				A78A7620239C8C3D0045AA66 /* UIImageViewExtension.swift in Sources */,
 				A78A76092399E97C0045AA66 /* URLRequest.swift in Sources */,
+				A731EA1A239DDF7800AC57DD /* DetalhesViewModel.swift in Sources */,
 				A78A76142399EF600045AA66 /* Movie.swift in Sources */,
 				A78A760E2399EA310045AA66 /* MoviesAPIClient.swift in Sources */,
 				A78A761B239C77210045AA66 /* MoviesListViewModel.swift in Sources */,

@@ -13,6 +13,8 @@ private let reuseIdentifier = "MoviesCell"
 class MoviesListCollectionViewController: UICollectionViewController {
     
     private var viewModel: MoviesListViewModel!
+    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 5.0, right: 10.0)
+    private let itemsPerRow: CGFloat = 2
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,23 +27,29 @@ class MoviesListCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return viewModel.totalCount
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MoviesListCollectionViewCell
-    
-        if !(viewModel.currentCount > 0) {
-            cell.setCell(with: .none)
-        } else {
+        if (viewModel.currentCount > 0) {
             cell.setCell(with: viewModel.movie(at: indexPath.row))
+        } else {
+            cell.setCell(with: .none)
         }
         return cell
+        
+        
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detalhesVC = DetalheViewController(movie: viewModel.movie(at: indexPath.row))
+        navigationController?.pushViewController(detalhesVC, animated: false)
     }
     
     private func endOfFetchRequest() {
@@ -50,40 +58,9 @@ class MoviesListCollectionViewController: UICollectionViewController {
         }
     }
 
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }
 
-// MARK: - Table View Model Delegate
+// MARK: - Collection View Model Delegate
     
 extension MoviesListCollectionViewController: MoviesListViewModelDelegate {
     func didFetch() {
@@ -92,6 +69,25 @@ extension MoviesListCollectionViewController: MoviesListViewModelDelegate {
     
     func didFailFetch(with reason: String) {
         endOfFetchRequest()
+    }
+    
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension MoviesListCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = collectionView.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        return CGSize(width: widthPerItem, height: (widthPerItem * 1.5))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInsets.left
     }
     
 }

@@ -23,7 +23,7 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.layer.cornerRadius = 35
+        image.layer.cornerRadius = 8
         image.clipsToBounds = true
         return image
     }()
@@ -37,8 +37,9 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
     
     let movieTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.boldSystemFont(ofSize: 13)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 2
         return label
     }()
     
@@ -60,7 +61,7 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
     func setCell(with movie: Movie?) {
         activityIndicator.startAnimating()
         if let movie = movie {
-            movieTitleLabel.text = "Title: \(movie.title)"
+            movieTitleLabel.text = "\(movie.title)"
             bannerImageView.loadImageWithUrl(theUrl: movie.coverUrl) { result in
                 switch result {
                 case .failure ( _):
@@ -89,26 +90,23 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
         containerView.addSubview(movieTitleLabel)
         contentView.addSubview(containerView)
     
-        bannerImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        bannerImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant:10).isActive = true
-        bannerImageView.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        bannerImageView.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        bannerImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        bannerImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4).isActive = true
+        bannerImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, constant: -30).isActive = true
         
-        activityIndicator.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        activityIndicator.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant:30).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: bannerImageView.centerYAnchor).isActive = true
+        activityIndicator.centerXAnchor.constraint(equalTo: bannerImageView.centerXAnchor).isActive = true
         activityIndicator.widthAnchor.constraint(equalToConstant: 30).isActive = true
         activityIndicator.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
-        containerView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        containerView.leadingAnchor.constraint(equalTo: bannerImageView.trailingAnchor, constant: 10).isActive = true
-        containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
-        containerView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        containerView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
-        movieTitleLabel.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
+        bannerImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
         movieTitleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
         movieTitleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
-        
-        
         
     }
     

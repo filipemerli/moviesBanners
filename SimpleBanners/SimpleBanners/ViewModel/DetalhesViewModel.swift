@@ -1,66 +1,53 @@
 //
-//  MoviesListViewModel.swift
+//  DetalhesViewModel.swift
 //  SimpleBanners
 //
-//  Created by Filipe Merli on 07/12/19.
+//  Created by Filipe Merli on 08/12/19.
 //  Copyright © 2019 Filipe Merli. All rights reserved.
 //
 
 import Foundation
+import UIKit
 
-protocol MoviesListViewModelDelegate: class {
+protocol DetalhesViewModelDelegate: class {
     func didFetch()
     func didFailFetch(with reason: String)
 }
 
-final class MoviesListViewModel {
+final class DetalhesViewModel {
     
     // MARK: Properties
     
-    private weak var delegate: MoviesListViewModelDelegate?
-    private var movies: [Movie] = []
+    private weak var delegate: DetalhesViewModelDelegate?
+    public var movie: Movie
+    public var coverBanner = UIImageView()
     private var isFetching = false
-    private var total = 0
-    
-    private let client = MoviesAPIClient()
-    
-    public var totalCount: Int {
-        return total
-    }
-    
-    public var currentCount: Int {
-        return movies.count
-    }
     
     // MARK: Initializer
     
-    init(delegate: MoviesListViewModelDelegate) {
+    init(movie: Movie, delegate: DetalhesViewModelDelegate) {
         self.delegate = delegate
+        self.movie = movie
     }
     
     // MARK: Class Functions
     
-    public func movie(at index: Int) -> Movie {
-        return movies[index]
-    }
-    
-    public func fetchMovies() {
+    public func fetchCoverBanner() {
         guard !isFetching else {
             return
         }
         isFetching = true
-        client.fetchMovies() { result in
+        coverBanner.loadImageWithUrl(theUrl: movie.backDrops.first ?? "http://") { result in
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
                     self.isFetching = false
                     self.delegate?.didFailFetch(with: error.reason)
                 }
-            case .success(let result):
+            case .success(let image):
                 DispatchQueue.main.async {
-                    self.total = result.count
                     self.isFetching = false
-                    self.movies.append(contentsOf: result)
+                    self.coverBanner.image = image.bannerImage
                     self.delegate?.didFetch()
                 }
             }
@@ -68,3 +55,5 @@ final class MoviesListViewModel {
     }
     
 }
+
+
